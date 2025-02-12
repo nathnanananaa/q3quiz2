@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz 2</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-image: url(https://img.freepik.com/free-photo/details-ball-sport_23-2151869801.jpg);
+            background-repeat: no-repeat;
+            background-size: 2000px;
+            text-align: center;
+            padding: 30px;
+        }
+        .box {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            display: block;
+            margin: 50px auto;
+            width: 70%;             text-align: left;
+            border: 2px dotted #333;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border: 2px solid black;
+            font-weight: bold;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        .btn-danger {
+            background-color: #dc3545;
+            border: 2px solid black;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="color: maroon; text-align: margin-left 20px;">CHEAPEST Super Bowl Ticket selling (REAL)</h1>
+    <p style="color:maroon; margin-left: 20px;">Each pass costs <b>120,000 Pesos</b>. Click below to buy your ticket.</p>
+
+    <div class="box">
+        <button class="btn btn-primary" onclick="purchasePass()">🎟 Purchase Pass</button>
+        <button class="btn btn-danger" onclick="resetPasses()">❌ Reset</button>
+        <p id="passCount">Passes Purchased: 0</p>
+        <p id="totalCost">Total Cost: 0 Pesos</p>
+    </div>
+
+    <script>
+        var passCost = 120000;
+        var passCount = 0;
+
+        function purchasePass() {
+            passCount++;
+            updateSummary();
+        }
+
+        function resetPasses() {
+            passCount = 0;
+            updateSummary();
+        }
+
+        function updateSummary() {
+            var total = passCount * passCost;
+            document.getElementById("passCount").innerText = "Passes Purchased: " + passCount;
+            document.getElementById("totalCost").innerText = "Total Cost: " + total + " Pesos";
+        }
+    </script>
+</body>
+</html> 
